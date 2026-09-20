@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f97316"/>
+      <stop offset="0.55" stop-color="#fb923c"/>
+      <stop offset="1" stop-color="#fde68a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <circle cx="170" cy="150" r="44" fill="#fff7ed" opacity="0.95"/>
+  <path d="M0 312 Q140 258 300 300 T620 292 T800 312 V500 H0 Z" fill="#7c2d12" opacity="0.55"/>
+  <path d="M0 500 L360 396 H440 L800 500 Z" fill="#3f3f46"/>
+  <path d="M0 500 L360 396 H440 L800 500 Z" fill="#27272a" transform="translate(0 14)"/>
+  <g stroke="#fbbf24" stroke-width="8" stroke-dasharray="34 30">
+    <path d="M388 416 L396 500 M412 416 L404 500"/>
+  </g>
+  <rect x="322" y="244" width="16" height="156" fill="#a1a1aa"/>
+  <rect x="462" y="244" width="16" height="156" fill="#a1a1aa"/>
+  <rect x="240" y="108" width="320" height="140" rx="10" fill="#ffffff" stroke="#18181b" stroke-width="6"/>
+  <rect x="240" y="108" width="320" height="34" rx="10" fill="#1d4ed8"/>
+  <text x="400" y="132" text-anchor="middle" font-family="'Microsoft YaHei',sans-serif" font-size="17" font-weight="700" fill="#ffffff">全线点位 招租热线 400-800-6688</text>
+  <text x="400" y="196" text-anchor="middle" font-family="'Microsoft YaHei',sans-serif" font-size="36" font-weight="800" fill="#1d4ed8">黄金路段 虚位以待</text>
+  <text x="400" y="228" text-anchor="middle" font-family="'Microsoft YaHei',sans-serif" font-size="15" fill="#52525b">车流密集 · 视野开阔 · 亮化到位</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="board" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fde047"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <g fill="#ffffff">
+    <circle cx="96" cy="70" r="2.4"/><circle cx="180" cy="120" r="2"/>
+    <circle cx="320" cy="60" r="2.2"/><circle cx="500" cy="96" r="2"/>
+    <circle cx="610" cy="48" r="2.4"/><circle cx="736" cy="130" r="2"/>
+    <circle cx="260" cy="150" r="1.8"/><circle cx="560" cy="170" r="1.8"/>
+  </g>
+  <circle cx="688" cy="80" r="30" fill="#f1f5f9" opacity="0.9"/>
+  <circle cx="676" cy="72" r="26" fill="#334155" opacity="0.55"/>
+  <path d="M0 340 Q200 296 400 334 T800 344 V500 H0 Z" fill="#1e293b"/>
+  <path d="M0 500 L350 396 H450 L800 500 Z" fill="#111827"/>
+  <g stroke="#64748b" stroke-width="7" stroke-dasharray="30 32">
+    <path d="M378 414 L386 500 M422 414 L414 500"/>
+  </g>
+  <rect x="328" y="240" width="16" height="158" fill="#475569"/>
+  <rect x="456" y="240" width="16" height="158" fill="#475569"/>
+  <rect x="238" y="102" width="324" height="142" rx="10" fill="url(#board)"/>
+  <rect x="238" y="102" width="324" height="142" rx="10" fill="none" stroke="#78350f" stroke-width="6"/>
+  <rect x="226" y="90" width="348" height="166" rx="16" fill="#fde047" opacity="0.16"/>
+  <text x="400" y="162" text-anchor="middle" font-family="'Microsoft YaHei',sans-serif" font-size="38" font-weight="800" fill="#78350f">24H 亮化展示</text>
+  <text x="400" y="204" text-anchor="middle" font-family="'Microsoft YaHei',sans-serif" font-size="18" fill="#92400e">夜间车流全覆盖 · 品牌不打烊</text>
+</svg>

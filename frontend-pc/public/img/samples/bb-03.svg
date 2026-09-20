@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#94a3b8"/>
+      <stop offset="1" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="board" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#cbd5e1"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <g fill="#64748b" opacity="0.5">
+    <rect x="40" y="238" width="52" height="80"/>
+    <rect x="108" y="212" width="64" height="106"/>
+    <rect x="186" y="250" width="44" height="68"/>
+    <rect x="560" y="226" width="58" height="92"/>
+    <rect x="634" y="248" width="46" height="70"/>
+    <rect x="694" y="204" width="66" height="114"/>
+  </g>
+  <path d="M0 500 L350 392 H450 L800 500 Z" fill="#475569"/>
+  <path d="M0 500 L350 392 H450 L800 500 Z" fill="#334155" transform="translate(0 14)"/>
+  <g stroke="#f1f5f9" stroke-width="8" stroke-dasharray="34 30">
+    <path d="M378 412 L386 500 M422 412 L414 500"/>
+  </g>
+  <rect x="326" y="238" width="16" height="160" fill="#94a3b8"/>
+  <rect x="458" y="238" width="16" height="160" fill="#94a3b8"/>
+  <rect x="244" y="104" width="312" height="140" rx="10" fill="url(#board)" stroke="#0f172a" stroke-width="6"/>
+  <rect x="244" y="104" width="312" height="30" fill="#dc2626"/>
+  <text x="400" y="127" text-anchor="middle" font-family="'Microsoft YaHei',sans-serif" font-size="16" font-weight="700" fill="#ffffff">跨线桥 · 三面环绕展示</text>
+  <text x="400" y="186" text-anchor="middle" font-family="'Microsoft YaHei',sans-serif" font-size="34" font-weight="800" fill="#0f172a">车流如织</text>
+  <text x="400" y="222" text-anchor="middle" font-family="'Microsoft YaHei',sans-serif" font-size="26" font-weight="800" fill="#dc2626">商机无限</text>
+</svg>

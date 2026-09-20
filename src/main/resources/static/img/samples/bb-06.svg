@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="board" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ea580c"/>
+      <stop offset="1" stop-color="#f97316"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <path d="M0 290 Q200 244 400 286 T800 296 V500 H0 Z" fill="#facc15" opacity="0.85"/>
+  <g stroke="#a16207" stroke-width="3" opacity="0.5">
+    <path d="M60 400 Q64 340 58 310"/>
+    <path d="M120 420 Q126 350 118 318"/>
+    <path d="M700 402 Q706 344 698 312"/>
+    <path d="M756 424 Q762 354 752 320"/>
+  </g>
+  <path d="M0 500 L350 394 H450 L800 500 Z" fill="#78716c"/>
+  <path d="M0 500 L350 394 H450 L800 500 Z" fill="#57534e" transform="translate(0 14)"/>
+  <g stroke="#fef3c7" stroke-width="8" stroke-dasharray="34 30">
+    <path d="M378 414 L386 500 M422 414 L414 500"/>
+  </g>
+  <rect x="326" y="236" width="16" height="160" fill="#a8a29e"/>
+  <rect x="458" y="236" width="16" height="160" fill="#a8a29e"/>
+  <rect x="238" y="100" width="324" height="142" rx="10" fill="url(#board)" stroke="#7c2d12" stroke-width="6"/>
+  <text x="400" y="160" text-anchor="middle" font-family="'Microsoft YaHei',sans-serif" font-size="36" font-weight="800" fill="#ffffff">枢纽黄金点位</text>
+  <text x="400" y="200" text-anchor="middle" font-family="'Microsoft YaHei',sans-serif" font-size="17" fill="#ffedd5">互通交汇 · 日均十万车流</text>
+  <rect x="238" y="100" width="324" height="142" rx="10" fill="none" stroke="#fff7ed" stroke-width="2" opacity="0.55" transform="translate(8 8)"/>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#e0f2fe"/>
+    </linearGradient>
+    <linearGradient id="board" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e3a8a"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <circle cx="670" cy="86" r="34" fill="#fef08a" opacity="0.9"/>
+  <path d="M0 300 Q160 232 320 286 T640 278 T800 300 V500 H0 Z" fill="#86efac" opacity="0.85"/>
+  <path d="M0 330 Q200 300 400 332 T800 340 V500 H0 Z" fill="#4ade80" opacity="0.6"/>
+  <path d="M0 500 L340 380 H460 L800 500 Z" fill="#64748b"/>
+  <path d="M0 500 L340 380 H460 L800 500 Z" fill="#475569" transform="translate(0 14)"/>
+  <g stroke="#f8fafc" stroke-width="8" stroke-dasharray="34 30">
+    <path d="M368 400 L376 500 M432 400 L424 500"/>
+  </g>
+  <rect x="322" y="228" width="18" height="160" fill="#94a3b8"/>
+  <rect x="460" y="228" width="18" height="160" fill="#94a3b8"/>
+  <rect x="236" y="96" width="328" height="140" rx="10" fill="url(#board)" stroke="#0f172a" stroke-width="6"/>
+  <rect x="252" y="112" width="296" height="108" rx="6" fill="none" stroke="#93c5fd" stroke-width="3" stroke-dasharray="10 8"/>
+  <text x="400" y="158" text-anchor="middle" font-family="'Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#ffffff">品牌高速门户</text>
+  <text x="400" y="196" text-anchor="middle" font-family="'Microsoft YaHei',sans-serif" font-size="17" fill="#bfdbfe">全线点位 · 火热招商中</text>
+</svg>

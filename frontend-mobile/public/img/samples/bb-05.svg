@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#bae6fd"/>
+    </linearGradient>
+    <linearGradient id="board" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d9488"/>
+      <stop offset="1" stop-color="#14b8a6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <path d="M0 300 L140 190 L260 280 L380 170 L520 300 Z" fill="#0f766e" opacity="0.35"/>
+  <path d="M470 300 L600 180 L720 270 L800 220 V300 Z" fill="#0f766e" opacity="0.3"/>
+  <path d="M140 190 L100 240 H180 Z" fill="#f8fafc" opacity="0.8"/>
+  <path d="M380 170 L340 224 H420 Z" fill="#f8fafc" opacity="0.8"/>
+  <path d="M0 300 H800 V500 H0 Z" fill="#22c55e" opacity="0.75"/>
+  <path d="M0 500 L350 392 H450 L800 500 Z" fill="#334155"/>
+  <path d="M0 500 L350 392 H450 L800 500 Z" fill="#1e293b" transform="translate(0 14)"/>
+  <g stroke="#fef9c3" stroke-width="8" stroke-dasharray="34 30">
+    <path d="M378 412 L386 500 M422 412 L414 500"/>
+  </g>
+  <rect x="324" y="234" width="16" height="162" fill="#a8a29e"/>
+  <rect x="460" y="234" width="16" height="162" fill="#a8a29e"/>
+  <rect x="234" y="98" width="332" height="144" rx="10" fill="url(#board)" stroke="#134e4a" stroke-width="6"/>
+  <circle cx="292" cy="170" r="30" fill="#f8fafc" opacity="0.18"/>
+  <text x="410" y="160" text-anchor="middle" font-family="'Microsoft YaHei',sans-serif" font-size="35" font-weight="800" fill="#ffffff">旅游季 · 品牌专列</text>
+  <text x="410" y="200" text-anchor="middle" font-family="'Microsoft YaHei',sans-serif" font-size="17" fill="#99f6e4">沿途风景线上的移动曝光</text>
+</svg>
