@@ -1,0 +1,7 @@
+.env
+.env.*
+bundle/
+backups/
+.build-tmp/
+*.tar.gz
+*.log
