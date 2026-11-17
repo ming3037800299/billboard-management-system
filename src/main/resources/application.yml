@@ -1,0 +1,121 @@
+# ============================================================
+# 公路广告牌租赁定位管理系统（初版）配置
+# 敏感项均支持环境变量覆盖，部署时无需修改本文件：
+#   DB_USERNAME / DB_PASSWORD —— MySQL 连接账号（默认为 init.sql 创建的最小权限账号）
+#   ADMIN_PASSWORD            —— 后台管理密码（默认 admin123）
+#   MAP_AK                    —— 腾讯地图 Key
+#   UPLOAD_DIR                —— 上传图片存放目录（默认 项目根目录/uploads）
+#   SERVER_PORT               —— 服务端口（默认 8080）
+#   OLLAMA_BASE_URL / EMBEDDING_MODEL —— 本地向量模型（默认 http://localhost:11434 + bge-m3）
+#   LLM_API_KEY / LLM_BASE_URL / LLM_MODEL —— 云端问答模型（默认 DeepSeek）
+# ============================================================
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: jqgg-glm53
+  datasource:
+    # 数据库 jqgg_glm53 由 sql/init.sql 创建；表结构统一由 init.sql 管理（ddl-auto: none）
+    url: jdbc:mysql://localhost:3306/jqgg_glm53?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: ${DB_USERNAME:jqgg_glm53_user}
+    # 本机 MySQL 采用无密码策略，密码默认为空；有密码时用 DB_PASSWORD 环境变量覆盖
+    password: ${DB_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      # 2GB 机器给并发页面轮询和问答留出余量；长时间占用会打印泄漏堆栈
+      maximum-pool-size: ${DB_POOL_MAX:20}
+      minimum-idle: ${DB_POOL_MIN:5}
+      leak-detection-threshold: ${DB_LEAK_THRESHOLD_MS:20000}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    show-sql: false
+  servlet:
+    multipart:
+      max-file-size: 120MB   # 压缩包批量导入最大 120MB（单张图片另有 10MB 业务校验）
+      max-request-size: 160MB # 单次请求（多图 / 压缩包上传）最大 160MB
+  web:
+    resources:
+      cache:
+        cachecontrol:
+          # 前端重新构建后 index.html 的名字不变、内部引用的资源 hash 会变：
+          # 若浏览器继续使用旧 index.html，旧 hash 资源已不存在会导致页面无样式。
+          # 因此静态资源一律要求浏览器先向服务端校验（未变化时仍返回 304，开销很小）。
+          no-cache: true
+          must-revalidate: true
+
+# poi-tl 默认会为每个占位符打印 INFO 日志，合同字段较多时噪声很大；只保留警告。
+logging:
+  level:
+    com.deepoove.poi: WARN
+
+app:
+  site-name: 公路广告牌租赁定位系统
+  admin:
+    # 后台管理密码（初版简易方案：固定密码，无账号体系；正式部署前请修改）
+    password: ${ADMIN_PASSWORD:admin123}
+    # 登录令牌有效期（小时），有效期内的请求会自动滑动续期
+    token-ttl-hours: 2
+  # 上传图片存放目录（相对应用工作目录）
+  upload-dir: ${UPLOAD_DIR:uploads}
+  # 合同 / 签章 / 签名等私有文件目录（不对外静态映射，只能经鉴权接口读取）
+  contract-dir: ${CONTRACT_DIR:uploads-private}
+  # 数据库维护模块独立连接：
+  #   不配置 username 时沿用主数据源（只能看到应用账号有权限的库）；
+  #   配置具备 SELECT / ALTER / SHOW DATABASES 的维护账号后，可列出并管理其他数据库。
+  db-maintenance:
+    enabled: ${DB_MAINT_ENABLED:true}
+    url: ${DB_MAINT_URL:}
+    username: ${DB_MAINT_USERNAME:}
+    password: ${DB_MAINT_PASSWORD:}
+  map:
+    # 腾讯位置服务 JavaScript API GL Key（浏览器端密钥）
+    # 申请/管理入口：https://lbs.qq.com/dev/console/application/mine
+    ak: ${MAP_AK:FHWBZ-IFT34-DWJUN-KBHKF-2ALPS-KABBG}
+  rag:
+    # 知识库 / RAG 开关
+    enabled: ${RAG_ENABLED:true}
+    # 启动后自动补齐缺失的广告牌索引
+    auto-index: ${RAG_AUTO_INDEX:true}
+    # 问答默认返回的参考广告牌数量
+    top-k: ${RAG_TOP_K:5}
+    # 纯语义检索的最低余弦相似度；低于该值的资料不参与回答（0 表示不过滤）
+    min-score: ${RAG_MIN_SCORE:0.5}
+    embedding:
+      # 本地向量服务地址（Ollama 或内置 Python 服务，接口兼容）
+      base-url: ${OLLAMA_BASE_URL:http://127.0.0.1:11434}
+      # 向量模型：中文推荐 bge-m3（1024 维）
+      model: ${EMBEDDING_MODEL:bge-m3}
+      connect-timeout-seconds: ${EMBEDDING_CONNECT_TIMEOUT:3}
+      timeout-seconds: ${EMBEDDING_TIMEOUT:60}
+    llm:
+      # 云端问答模型（OpenAI 兼容接口）
+      # DeepSeek: https://api.deepseek.com/v1 + deepseek-chat
+      # 阿里百炼: https://dashscope.aliyuncs.com/compatible-mode/v1 + qwen-plus
+      base-url: ${LLM_BASE_URL:https://api.deepseek.com/v1}
+      model: ${LLM_MODEL:deepseek-chat}
+      # 未配置时只返回知识库检索结果，不生成自然语言答案
+      api-key: ${LLM_API_KEY:}
+      # 单次回答最大 token 数；结构化结果较多时需要足够大，避免答案被截断
+      max-tokens: ${LLM_MAX_TOKENS:2000}
+      # 前台“智能选牌”可切换的模型（共享上面的 base-url / api-key）
+      models:
+        - id: deepseek-chat
+          label: DeepSeek Chat（标准）
+          model: deepseek-chat
+          max-tokens: 2000
+          temperature: 0.2
+        - id: deepseek-reasoner
+          label: DeepSeek Reasoner（推理）
+          model: deepseek-reasoner
+          max-tokens: 4096
+          temperature: 0.2
+      connect-timeout-seconds: ${LLM_CONNECT_TIMEOUT:5}
+      timeout-seconds: ${LLM_TIMEOUT:60}
+  # API 管理：首次启动且 api_config 表为空时，把上面的默认接口写入数据库，
+  # 之后以后台「API 管理」中的配置为准；false 表示完全沿用当前 yml 配置。
+  api:
+    seed-defaults: ${API_SEED_DEFAULTS:true}
