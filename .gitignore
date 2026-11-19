@@ -53,3 +53,6 @@ deploy/bundle/
 deploy/backups/
 deploy/.build-tmp/
 build-deploy.log
+
+# GitHub Actions（当前 PAT 无 workflow 权限，需要时单独启用）
+.github/workflows/
