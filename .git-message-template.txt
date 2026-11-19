@@ -1,0 +1,9 @@
+# <类型>(<范围>): <简短说明>（不超过 50 字）
+#
+# 类型：feat 新功能 / fix 修复 / docs 文档 / style 格式 / refactor 重构
+#       perf 性能 / test 测试 / chore 构建或工具
+# 范围：billboard / contract / reservation / admin / knowledge / deploy / frontend
+#
+# 正文（可选）：说明动机与影响，每行不超过 72 字
+#
+# 页脚（可选）：Closes #<issue 编号>
