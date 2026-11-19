@@ -1,0 +1,34 @@
+# 统一换行符：文本文件检出时由 git 按平台自动转换，入库一律 LF
+* text=auto
+
+# 明确按文本处理
+*.java   text
+*.js     text
+*.ts     text
+*.vue    text
+*.css    text
+*.html   text
+*.json   text
+*.xml    text
+*.yml    text
+*.yaml   text
+*.sql    text
+*.sh     text eol=lf
+*.bat    text eol=crlf
+*.md     text
+*.mjs    text
+*.py     text
+
+# 二进制文件（禁止 diff / 换行符转换）
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.pdf    binary
+*.docx   binary
+*.xlsx   binary
+*.zip    binary
+*.tar.gz binary
+*.jar    binary
+*.onnx   binary

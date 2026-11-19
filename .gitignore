@@ -1,0 +1,55 @@
+# Maven 构建产物
+target/
+
+# 双前端构建产物
+.build/
+dist/
+
+# 前端依赖（由 package-lock.json / pnpm-lock.yaml 还原）
+node_modules/
+
+# CodeBuddy 本地会话 / 项目缓存数据
+.codebuddy/
+
+# 上传的图片文件（运行时数据）
+uploads/
+
+# 合同 / 签章 / 签名等私有文件（运行时数据）
+uploads-private/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# 日志
+*.log
+*.log.bak
+*.log.*
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 本地 RAG 模型（bge-m3 约 2.3GB / 轻量模型约 24MB，不入库）
+rag-service/model/
+rag-service/model-small/
+rag-service/__pycache__/
+
+# 本地私有配置（含密钥，不入库）
+config/
+application-local.yml
+application-*.secret.yml
+*.pem
+*.key
+
+# 部署产物与密钥（不入库）
+deploy/.env
+deploy/app.jar
+deploy/bundle/
+deploy/backups/
+deploy/.build-tmp/
+build-deploy.log
