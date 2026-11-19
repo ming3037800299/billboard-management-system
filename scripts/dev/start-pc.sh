@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # 启动 PC 端（后端单进程同时提供 / 与 /admin；移动端 /m/ 未改动）
 set -Eeuo pipefail
-cd "$(dirname "$0")"
+cd "$(dirname "$0")/../.."
 
 export DB_MAINT_USERNAME="${DB_MAINT_USERNAME:-jqgg_maint_user}"
 export DB_MAINT_PASSWORD="${DB_MAINT_PASSWORD:-}"

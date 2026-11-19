@@ -16,6 +16,25 @@
 > 再由云端大模型基于命中资料生成回答。纯语义结果低于相关度阈值（默认 0.5）会被过滤。
 > 未启动本地向量服务或未配置问答模型 Key 时，系统仍可正常使用，页面会给出明确提示。
 
+## 目录结构
+
+```
+.
+├── pom.xml                  # Maven 构建（后端 Spring Boot 4.1.1 / Java 25）
+├── src/                     # 后端源码 + 双端构建产物（static/）
+├── frontend-pc/             # 电脑端 Vue 3 工程
+├── frontend-mobile/         # 手机端 Vue 3 工程
+├── rag-service/             # 本地 bge-m3 向量服务（ONNX Runtime）
+├── sql/                     # 数据库初始化与迁移脚本
+├── deploy/                  # Docker Compose 生产部署
+├── docs/                    # 设计与需求文档
+├── scripts/
+│   ├── dev/                 # 本地启动脚本（start-pc.bat / .sh）
+│   ├── verify/              # 端到端验证与截图脚本（.mjs）
+│   └── git/                 # 仓库维护脚本（推送、历史回放、提交模板）
+└── README.md
+```
+
 ## 技术栈
 
 | 层 | 技术 |
